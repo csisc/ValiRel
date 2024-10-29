@@ -32,7 +32,7 @@ In the initial experiment, we establish thresholds to allow the Llama model to r
 ### Refinement of Relations
 Based on calibration results, we refined our relation lists as follows:
 1. **Relations to Add**: Relations with an \( R(6) > 0.5 \) are marked for potential addition to Wikidata. Results are stored in the `add` directory. Our experiment provided 209,827 refined pairs (68.4\%).
-2. **Relations to Remove**: Relations with an \( R(6) < 0.866 \) are recommended for verification or potential removal from Wikidata. These are available in the `verify` directory. Our experiment provided (\%) refined relations requiring full attention.
+2. **Relations to Remove**: Relations with an \( R(6) < 0.866 \) are recommended for verification or potential removal from Wikidata. These are available in the `verify` directory. Our experiment provided 12,183 (34.1\%) refined relations requiring full attention.
 
 ## Repository Contents
 
