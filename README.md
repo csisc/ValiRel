@@ -21,7 +21,7 @@ The input data includes two primary subsets:
 The initial experiment determines thresholds that allow Llama to differentiate true relations from false ones. A random sample of 500 biomedical relations, with low PMI scores and existing Wikidata relations, was used for validation by querying the Llama model.
 
 - **Repetition Count**: Each relation undergoes 30 validation repetitions to gauge stability.
-- **Result Metric (R)**: Defined as \( R = \frac{T}{T+F} \), where \( T \) is the number of true classifications, and \( F \) is the number of false classifications.
+- **Result Metric (R)**: Defined as $R = \frac{T}{T+F}$, where \( T \) is the number of true classifications, and \( F \) is the number of false classifications.
 - **Clustering Analysis**: Stability in relation classification was achieved after six repetitions, allowing final clustering based on Llama's assessments.
 
 ### Findings
