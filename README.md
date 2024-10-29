@@ -52,6 +52,9 @@ Based on the calibration, relations were refined into the following lists:
 2. **Run Calibration**: Execute the calibration script to view clustering results.
 3. **Generate Output**: Based on calibration results, generate refined relations and save them in the `add` and `verify` directories.
 
+### Discussion
+1. **Behavior of temperature in True/False questions:** LLM experts say that the LLM is more conclusive when Temperature is set to 0 and that it does not generate consequently different answers for the same question. What we found is very different. In fact, when Temperature is 0, all results are TRUE to True/False questions because Temperature is mainly about how much context should the LLM consider from the prompt. When the Temperature increases, the value of $R$ becomes more variable having a normal distribution with an increasing standard deviation and a mode shifting towards 0.5. For our experiment, a temperature of 10000 is excellent.
+2. **Use of logprobs instead of repetition:** The use of repetition is derived from the assumption that repeating the question twice to a human individual allows to eliminate what scientists qualify as "bullshit", "lies", or "hallucinations". However, we can theoretically have this probability through leveraging logprobs. We did an experiment in this context and we found that if we set the temperature to 10000, we can use $S = \frac{exp(t)}{exp(t)+exp(f)}$, where $t$ is the logprob of TRUE, and $f$ is the logprob of FALSE to decide whether the tested assumption is accurate or not. We found that the relation is accurate if $S = 1$ and the relation is false if $S < 0.8$.
 ## Acknowledgments
 - Our source code is based on https://swharden.com/blog/2023-07-29-ai-chat-locally-with-python/.
 - We thank Wikimedia Switzerland, and particularly Ilario Valdelli, for providing computer resources for the experiment.
