@@ -5,14 +5,14 @@ ValiRel is a project that explores the effectiveness of lightweight large langua
 
 ### Repository Structure
 The repository is organized into several directories:
-- **`input`**: Contains the original dataset with 35,719 semantic relations between MeSH keywords, grouped by PMI values.
+- **`input`**: Contains the original dataset of semantic relations between MeSH keywords to be added to or removed from Wikidata, based on PMI values.
 - **`calibration`**: Holds the calibration results, where verification repetitions are performed to determine the stable clustering point.
-- **`add`**: Contains the list of new relations recommended for addition to Wikidata based on validation outcomes.
-- **`verify`**: Contains the list of relations flagged for further verification or removal from Wikidata.
+- **`add`**: Contains the refined list of new relations recommended for addition to Wikidata based on validation outcomes.
+- **`verify`**: Contains the refined list of relations flagged for further verification or removal from Wikidata.
 
 ## Data Description
 - **Input Data**: Includes two primary subsets:
-  - **PMI < 2**: Relations between MeSH keywords with PMI scores below 2, indicating limited statistical association.
+  - **PMI < 2**: Wikidata relations between MeSH keywords with PMI scores below 2, indicating limited statistical association. This subset contains **35,719** relations.
   - **PMI >= 2 (Unlinked)**: MeSH keyword pairs with PMI scores of 2 or higher, lacking a corresponding relation in Wikidata. This subset contains **306,579** pairs.
 
 ## Experiments
@@ -31,8 +31,8 @@ In the initial experiment, we establish thresholds to allow the Llama model to r
 
 ### Refinement of Relations
 Based on calibration results, we refined our relation lists as follows:
-1. **Relations to Add**: Relations with an \( R(6) > 0.5 \) are marked for potential addition to Wikidata. Results are stored in the `add` directory.
-2. **Relations to Remove**: Relations with an \( R(6) < 0.866 \) are recommended for verification or potential removal from Wikidata. These are available in the `verify` directory.
+1. **Relations to Add**: Relations with an \( R(6) > 0.5 \) are marked for potential addition to Wikidata. Results are stored in the `add` directory. Our experiment provided 209,827 refined pairs (68.4\%).
+2. **Relations to Remove**: Relations with an \( R(6) < 0.866 \) are recommended for verification or potential removal from Wikidata. These are available in the `verify` directory. Our experiment provided (\%) refined relations requiring full attention.
 
 ## Repository Contents
 
