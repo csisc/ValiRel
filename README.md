@@ -43,14 +43,18 @@ Based on the calibration, relations were refined into the following lists:
 
 ## Requirements
 
-- **LLM Framework**: Ensure that the Llama model is installed and accessible.
-- **Dependencies**: Required libraries for data handling and Llama queries.
+- **LLM Framework**: Ensure that the Llama model is installed and accessible. We used https://huggingface.co/lmstudio-community/Llama-3.2-1B-Instruct-GGUF/resolve/main/Llama-3.2-1B-Instruct-Q8_0.gguf as the source file for the LLM.
+- **Dependencies**: Required libraries for data handling and Llama queries. We used llama-cpp-python and pandas as Python Packages.
 
 ## Usage
 
 1. **Prepare the Dataset**: Place input data in the `input` directory.
 2. **Run Calibration**: Execute the calibration script to view clustering results.
 3. **Generate Output**: Based on calibration results, generate refined relations and save them in the `add` and `verify` directories.
+
+## Acknowledgments
+- Our source code is based on https://swharden.com/blog/2023-07-29-ai-chat-locally-with-python/.
+- We thank Wikimedia Switzerland, and particularly Ilario Valdelli, for providing computer resources for the experiment.
 
 ## License
 
