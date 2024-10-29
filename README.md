@@ -21,18 +21,18 @@ The input data includes two primary subsets:
 The initial experiment determines thresholds that allow Llama to differentiate true relations from false ones. A random sample of 500 biomedical relations, with low PMI scores and existing Wikidata relations, was used for validation by querying the Llama model.
 
 - **Repetition Count**: Each relation undergoes 30 validation repetitions to gauge stability.
-- **Result Metric (R)**: Defined as $R = \frac{T}{T+F}$, where \( T \) is the number of true classifications, and \( F \) is the number of false classifications.
+- **Result Metric (R)**: Defined as $R = \frac{T}{T+F}$, where $T$ is the number of true classifications, and $F$ is the number of false classifications.
 - **Clustering Analysis**: Stability in relation classification was achieved after six repetitions, allowing final clustering based on Llama's assessments.
 
 ### Findings
-- **True Relations**: Relations with \( R(6) > 0.5 \) are designated as true.
-- **False Relations**: Relations with \( R(6) < 0.866 \) are designated as false.
+- **True Relations**: Relations with $R(6) > 0.5$ are designated as true.
+- **False Relations**: Relations with $R(6) < 0.866$ are designated as false.
 - Detailed calibration results are located in the `calibration` directory.
 
 ### Relation Refinement
 Based on the calibration, relations were refined into the following lists:
-1. **Additions**: Relations with \( R(6) > 0.5 \) are proposed for Wikidata addition. This subset contains **209,827** pairs (68.4% of tested relations).
-2. **Verifications**: Relations with \( R(6) < 0.866 \) are marked for further verification or potential removal from Wikidata. This subset contains **12,183** pairs (34.1% of tested relations).
+1. **Additions**: Relations with $R(6) > 0.5$ are proposed for Wikidata addition. This subset contains **209,827** pairs (68.4% of tested relations).
+2. **Verifications**: Relations with $R(6) < 0.866$ are marked for further verification or potential removal from Wikidata. This subset contains **12,183** pairs (34.1% of tested relations).
 
 ## Repository Contents
 
