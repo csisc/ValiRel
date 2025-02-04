@@ -58,6 +58,7 @@ Based on the calibration, relations were refined into the following lists:
 
 ## Other Refinements
 After initial filtering and validation using Llama-3.2-1B, the MeSH2Wikidata dataset undergoes a structured refinement process to ensure accuracy and consistency before final integration. The output from this stage is stored in the **`phi`** folder and serves as the foundation for subsequent validation by additional models and human experts. Phi-3.5-mini analyzed token probabilities, assigning \( P = e^t \) if "TRUE" was the top token and \( P = 1 - e^f \) if "FALSE" was the top token, where \( t \) and \( f \) were log probabilities. Relations were added if \( P \geq 0.8 \) and removed if \( P \leq 0.5 \). Next, ChatGPT-4 \cite{gpt4} validated the remaining candidates using clinical guidelines and MeSH ontology, with human experts resolving ambiguous cases. This tiered approach leveraged Llama-3.2-1B for cost-effective filtering, Phi-3.5-mini for rapid token-level analysis, and ChatGPT-4 for advanced biomedical reasoning, balancing computational efficiency and accuracy.
+
 ## Acknowledgments
 - Our source code is based on https://swharden.com/blog/2023-07-29-ai-chat-locally-with-python/.
 - We thank Wikimedia Switzerland, and particularly Ilario Valdelli, for providing computer resources for the experiment.
