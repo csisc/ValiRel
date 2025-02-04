@@ -57,7 +57,7 @@ Based on the calibration, relations were refined into the following lists:
 2. **Use of logprobs instead of repetition:** The use of repetition is derived from the assumption that repeating the question twice to a human individual allows to eliminate what scientists qualify as "bullshit", "lies", or "hallucinations". However, we can theoretically have this probability through leveraging logprobs. We did an experiment in this context and we found that if we set the temperature to 10000, we can use $S = \frac{e^t}{e^t+e^f}$, where $t$ is the logprob of TRUE, and $f$ is the logprob of FALSE to decide whether the tested assumption is accurate or not. We found that the relation is accurate if $S = 1$ and the relation is false if $S < 0.8$.
 
 ## Other Refinements
-
+**`phi`**:
 ## Acknowledgments
 - Our source code is based on https://swharden.com/blog/2023-07-29-ai-chat-locally-with-python/.
 - We thank Wikimedia Switzerland, and particularly Ilario Valdelli, for providing computer resources for the experiment.
